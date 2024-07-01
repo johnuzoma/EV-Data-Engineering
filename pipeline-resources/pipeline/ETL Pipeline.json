@@ -13,8 +13,9 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
+				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/uzomajohn96@gmail.com/Get EV and demographic data into bronze"
+					"notebookPath": "/Users/uzomajohn96@gmail.com/1. Get EV and demographic data into bronze"
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabricks",
@@ -41,7 +42,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/uzomajohn96@gmail.com/Transform EV charging point data for silver"
+					"notebookPath": "/Users/uzomajohn96@gmail.com/2. Transform EV charging point data for silver"
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabricks",
@@ -68,7 +69,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/uzomajohn96@gmail.com/Transform vehicle licensing data for silver"
+					"notebookPath": "/Users/uzomajohn96@gmail.com/3. Transform vehicle licensing data for silver"
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabricks",
@@ -95,7 +96,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/uzomajohn96@gmail.com/Transform demographic data for silver"
+					"notebookPath": "/Users/uzomajohn96@gmail.com/4. Transform demographic data for silver"
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabricks",
@@ -122,7 +123,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/uzomajohn96@gmail.com/Generate fact and dimension tables for gold"
+					"notebookPath": "/Users/uzomajohn96@gmail.com/5. Generate fact and dimension tables for gold"
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabricks",
@@ -149,7 +150,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/uzomajohn96@gmail.com/Generate reports"
+					"notebookPath": "/Users/uzomajohn96@gmail.com/6. Generate reports"
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabricks",
