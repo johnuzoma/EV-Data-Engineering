@@ -1,0 +1,9 @@
+{
+	"name": "ADF-SSE-Task",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "d93c70c4-d077-4537-b300-6ccfe42928ef",
+		"tenantId": "ffcec905-ea9d-4a2f-b0a4-300ea0063848"
+	}
+}
