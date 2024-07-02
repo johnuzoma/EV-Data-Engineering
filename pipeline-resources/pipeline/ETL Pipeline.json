@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Get EV and demographic data into bronze",
+				"name": "Extract raw data into bronze",
 				"type": "DatabricksNotebook",
 				"dependsOn": [],
 				"policy": {
@@ -15,7 +15,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/uzomajohn96@gmail.com/1. Get EV and demographic data into bronze"
+					"notebookPath": "/Users/uzomajohn96@gmail.com/1. Extract EV and demographic data into bronze"
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabricks",
@@ -23,11 +23,11 @@
 				}
 			},
 			{
-				"name": "Transform EV charging point data for silver",
+				"name": "Cleanse EV charge point data for silver",
 				"type": "DatabricksNotebook",
 				"dependsOn": [
 					{
-						"activity": "Get EV and demographic data into bronze",
+						"activity": "Extract raw data into bronze",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -42,7 +42,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/uzomajohn96@gmail.com/2. Transform EV charging point data for silver"
+					"notebookPath": "/Users/uzomajohn96@gmail.com/2. Cleanse EV charging point data for silver"
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabricks",
@@ -50,11 +50,11 @@
 				}
 			},
 			{
-				"name": "Transform vehicle licensing data for silver",
+				"name": "Cleanse vehicle licenses for silver",
 				"type": "DatabricksNotebook",
 				"dependsOn": [
 					{
-						"activity": "Transform EV charging point data for silver",
+						"activity": "Extract raw data into bronze",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -69,7 +69,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/uzomajohn96@gmail.com/3. Transform vehicle licensing data for silver"
+					"notebookPath": "/Users/uzomajohn96@gmail.com/3. Cleanse vehicle licensing data for silver"
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabricks",
@@ -77,11 +77,11 @@
 				}
 			},
 			{
-				"name": "Transform demographic data for silver",
+				"name": "Cleanse demographic data for silver",
 				"type": "DatabricksNotebook",
 				"dependsOn": [
 					{
-						"activity": "Transform vehicle licensing data for silver",
+						"activity": "Extract raw data into bronze",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -96,7 +96,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/uzomajohn96@gmail.com/4. Transform demographic data for silver"
+					"notebookPath": "/Users/uzomajohn96@gmail.com/4. Cleanse demographic data for silver"
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabricks",
@@ -108,7 +108,19 @@
 				"type": "DatabricksNotebook",
 				"dependsOn": [
 					{
-						"activity": "Transform demographic data for silver",
+						"activity": "Cleanse demographic data for silver",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "Cleanse vehicle licenses for silver",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "Cleanse EV charge point data for silver",
 						"dependencyConditions": [
 							"Succeeded"
 						]
