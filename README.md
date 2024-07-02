@@ -56,7 +56,7 @@ Please view this notebook that contains the code [1. Extract EV and demographic 
 - I saved both dataframes as delta tables in the gold layer using append mode. Please view this notebook that contains the code [5. Generate fact and dimension tables for gold.ipynb](https://github.com/johnuzoma/EV-Data-Engineering/blob/main/notebooks/5.%20Generate%20fact%20and%20dimension%20tables%20for%20gold.ipynb).
 
 - For the analysis, I used SQL to write a CTE (Common Table Expression) to calculate the ratio of electric vehicles to chargers to identify areas with high EV concentration and limited charging infrastructure. Then I performed an inner join between the CTE and demographic table to identify potential areas for new charge points, sorted in descending order by both EV-to-charger ratio and population density. The report is shown below:
-<img width="920" alt="report" src="https://github.com/johnuzoma/EV-Data-Engineering/assets/18267074/bec98bc7-2c70-47ff-ac4d-d76a7b695ca4">
+<img width="918" alt="report" src="https://github.com/johnuzoma/EV-Data-Engineering/assets/18267074/2b828357-5a60-435b-a54a-3dc7d018b4ff">
 
 Please view this notebook that contains the code [6. Generate report.ipynb](https://github.com/johnuzoma/EV-Data-Engineering/blob/main/notebooks/6.%20Generate%20report.ipynb).
 
