@@ -36,7 +36,7 @@ Azure Data Factory (ADF) supports CI/CD by integrating with Azure DevOps and Azu
 7. **Feature Flags**: Use global parameters and the **if condition** activity to manage feature flags, allowing you to control which features are active in different environments.
 8. **Avoid Manual Alterations**: Do not manually add or alter files in the ADF Git repository, as this can cause loading errors.
 
-# 3. Development ETL pipeline
+# 3. My development ETL pipeline for the project
 <img width="606" alt="labelled_pipeline" src="https://github.com/johnuzoma/EV-Data-Engineering/assets/18267074/2b54d74f-3801-4b0e-90af-5b8f2fa233eb">
 
 ## 3.1. Data extraction and loading process
