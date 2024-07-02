@@ -4,37 +4,37 @@ Using Azure Data Factory, I built an ETL pipeline comprising of Databricks noteb
 # 2. How to use CI/CD pipelines to migrate code from one environment to another (development, test, production)
 Azure Data Factory (ADF) supports CI/CD by integrating with Azure DevOps and Azure Resource Manager templates. Below is an overview of how I would implement a CI/CD in an Azure Data Factory environment configured with Azure Repos Git.
 
-## 2.1. Tools used
-1. Azure Data Factory: For creating and managing data pipelines.
-2. Azure DevOps: For version control, build automation, and release management.
-3. Azure Resource Manager (ARM) Templates: For defining the infrastructure and configurations of ADF entities.
+## 2.1. Tools I would use
+1. **Azure Data Factory**: For creating and managing data pipelines.
+2. **Azure DevOps**: For version control, build automation, and release management.
+3. **Azure Resource Manager (ARM) Templates**: For defining the infrastructure and configurations of ADF entities.
 
 ## 2.2. CI/CD lifecycle steps
-1. Development Environment
+1. **Development Environment**
     - Setup: Configure a development data factory with Azure Repos Git.
     - Branching: Developers create feature branches to work on new features or bug fixes.
     - Debugging: Use iterative development and debugging techniques to ensure changes work as expected.
     - Pull Requests: Once changes are ready, create a pull request from the feature branch to the main branch for peer review.
-2. Testing Environment
+2. **Testing Environment**
     - Publishing: After pull requests are approved and merged, changes are published to the development data factory.
     - Deployment to Testing: Use Azure Pipelines to deploy the desired version of the development factory to a User Acceptance Testing (UAT) factory. This involves:
       - Configuring ARM template parameters to apply the appropriate settings.
       - Running pre-deployment scripts to stop triggers and perform necessary cleanup.
       - Deploying the ARM templates using Azure DevOps tasks.
       - Running post-deployment scripts to restart triggers and verify deployment.
-3. Production Environment
+3. **Production Environment**
     - Verification: After changes are validated in the testing environment, deploy to the production factory using Azure Pipelines.
     - Consistency: Ensure that the production factory mirrors the tested configuration by applying the same ARM templates and parameters.
 
 ## 2.2. Best Practices for CI/CD in Data Engineering
-1. Git Integration: Only configure the development data factory with Git. Deploy changes to testing and production environments using CI/CD pipelines without Git integration.
-2. Pull Requests: Give pull requests the names that are descriptive of what they do. It’s also good practice to leave comments about the pull requests for reviewers.
-3. Pre- and Post-Deployment Scripts: Use PowerShell scripts to manage triggers and perform cleanup tasks before and after deployments. Ensure you use the latest versions of PowerShell and the ADF module to avoid errors.
-4. Integration Runtimes: Maintain the same name, type, and sub-type of integration runtimes across all environments to avoid configuration issues. Consider using a shared factory for self-hosted integration runtimes.
-5. Key Vault Management: Use separate Azure Key Vaults for different environments with the same secret names to simplify parameterization.
-6. Resource Naming: Avoid spaces in resource names to prevent ARM template deployment issues. Use underscores (_) or hyphens (-) instead.
-7. Feature Flags: Use global parameters and the **if condition** activity to manage feature flags, allowing you to control which features are active in different environments.
-8. Avoid Manual Alterations: Do not manually add or alter files in the ADF Git repository, as this can cause loading errors.
+1. **Git Integration**: Only configure the development data factory with Git. Deploy changes to testing and production environments using CI/CD pipelines without Git integration.
+2. **Pull Requests**: Give pull requests the names that are descriptive of what they do. It’s also good practice to leave comments about the pull requests for reviewers.
+3. **Pre- and Post-Deployment Scripts**: Use PowerShell scripts to manage triggers and perform cleanup tasks before and after deployments. Ensure you use the latest versions of PowerShell and the ADF module to avoid errors.
+4. **Integration Runtimes**: Maintain the same name, type, and sub-type of integration runtimes across all environments to avoid configuration issues. Consider using a shared factory for self-hosted integration runtimes.
+5. **Key Vault Management**: Use separate Azure Key Vaults for different environments with the same secret names to simplify parameterization.
+6. **Resource Naming**: Avoid spaces in resource names to prevent ARM template deployment issues. Use underscores (_) or hyphens (-) instead.
+7. **Feature Flags**: Use global parameters and the **if condition** activity to manage feature flags, allowing you to control which features are active in different environments.
+8. **Avoid Manual Alterations**: Do not manually add or alter files in the ADF Git repository, as this can cause loading errors.
 
 # 3. Development ETL pipeline
 <img width="606" alt="labelled_pipeline" src="https://github.com/johnuzoma/EV-Data-Engineering/assets/18267074/2b54d74f-3801-4b0e-90af-5b8f2fa233eb">
