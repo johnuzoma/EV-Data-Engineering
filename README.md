@@ -26,7 +26,7 @@ Azure Data Factory (ADF) supports CI/CD by integrating with Azure DevOps and Azu
     - Verification: After changes are validated in the testing environment, deploy to the production factory using Azure Pipelines.
     - Consistency: Ensure that the production factory mirrors the tested configuration by applying the same ARM templates and parameters.
 
-## 2.2. Best Practices for CI/CD in Data Engineering
+## 2.2. Best practices for CI/CD in data engineering
 1. **Git Integration**: Only configure the development data factory with Git. Deploy changes to testing and production environments using CI/CD pipelines without Git integration.
 2. **Pull Requests**: Give pull requests the names that are descriptive of what they do. It’s also good practice to leave comments about the pull requests for reviewers.
 3. **Pre- and Post-Deployment Scripts**: Use PowerShell scripts to manage triggers and perform cleanup tasks before and after deployments. Ensure you use the latest versions of PowerShell and the ADF module to avoid errors.
