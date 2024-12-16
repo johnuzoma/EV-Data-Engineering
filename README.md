@@ -1,5 +1,5 @@
 # 1. Executive summary
-Using Azure Data Factory, I built an ETL pipeline comprising of Databricks notebooks. In those notebooks, I wrote shell commands to extract data, PySpark code to cleanse the data and Spark SQL code to analyse the data to identify potential locations for new EV charge points in South Dublin.
+Using Azure Data Factory, I built an ETL pipeline comprising of Spark notebooks in Databricks. In those notebooks, I wrote shell commands to extract data, PySpark code to cleanse the data and Spark SQL code to analyse the data to identify potential locations for new EV charge points in South Dublin.
 
 # 2. My development ETL pipeline for the project
 <img width="606" alt="labelled_pipeline" src="https://github.com/johnuzoma/EV-Data-Engineering/assets/18267074/2b54d74f-3801-4b0e-90af-5b8f2fa233eb">
